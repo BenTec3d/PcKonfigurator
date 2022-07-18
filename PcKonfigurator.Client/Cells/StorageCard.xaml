@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView
+    x:Class="PcKonfigurator.Client.Cells.StorageCard"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:cells="clr-namespace:PcKonfigurator.Client.Cells"
+    xmlns:models="clr-namespace:PcKonfigurator.Shared.Models;assembly=PcKonfigurator.Shared"
+    Margin="5"
+    x:DataType="models:Storage">
+
+    <Grid ColumnDefinitions="110, *, auto" RowDefinitions="110">
+        <cells:ProductPicture />
+
+        <VerticalStackLayout Grid.Column="1" Padding="5,5,0,0">
+            <Label
+                FontSize="Medium"
+                LineBreakMode="TailTruncation"
+                Text="{Binding Name}" />
+
+            <Label FontSize="Small" LineBreakMode="TailTruncation">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Kapazität: " />
+                        <Span Text="{Binding Capacity}" />
+                        <Span Text="GB" />
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+
+            <Label FontSize="Small" LineBreakMode="TailTruncation">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Schnittstelle: " />
+                        <Span Text="{Binding Connection}" />
+                        <Span Text="  Typ: " />
+                        <Span Text="{Binding Type}" />
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+        </VerticalStackLayout>
+
+        <cells:InventoryStats />
+    </Grid>
+</ContentView>

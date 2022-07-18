@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="PcKonfigurator.Client.Views.AuthenticationPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:viewmodels="clr-namespace:PcKonfigurator.Client.ViewModels"
+    Title="{Binding Title}"
+    x:DataType="viewmodels:AuthenticationPageViewModel"
+    BackgroundColor="{AppThemeBinding Light={StaticResource White},
+                                      Dark={StaticResource Gray900}}">
+
+    <Grid ColumnDefinitions="*, *, *" RowDefinitions="*, *, *">
+        <VerticalStackLayout
+            Grid.Row="1"
+            Grid.Column="1"
+            Spacing="5">
+            <Entry
+                BackgroundColor="{AppThemeBinding Light={StaticResource Gray100},
+                                                  Dark={StaticResource Gray300}}"
+                FontSize="Large"
+                Placeholder="Nutzername"
+                Text="{Binding Username}" />
+            <Entry
+                BackgroundColor="{AppThemeBinding Light={StaticResource Gray100},
+                                                  Dark={StaticResource Gray300}}"
+                FontSize="Large"
+                IsPassword="True"
+                Placeholder="Passwort"
+                Text="{Binding Password}" />
+            <Button
+                Command="{Binding LoginCommand}"
+                FontSize="Large"
+                BackgroundColor="{StaticResource Primary}"
+                Text="Anmelden" />
+        </VerticalStackLayout>
+    </Grid>
+
+</ContentPage>

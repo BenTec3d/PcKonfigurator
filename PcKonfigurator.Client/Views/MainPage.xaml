@@ -1,0 +1,224 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="PcKonfigurator.Client.Views.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:cells="clr-namespace:PcKonfigurator.Client.Cells"
+    xmlns:viewmodels="clr-namespace:PcKonfigurator.Client.ViewModels"
+    Title="{Binding Title}"
+    x:DataType="viewmodels:MainPageViewModel"
+    BackgroundColor="{AppThemeBinding Light={StaticResource White},
+                                      Dark={StaticResource Gray900}}">
+
+    <Grid ColumnDefinitions="*,*,*">
+        <VerticalStackLayout Grid.Column="0">
+
+            <Grid ColumnDefinitions="auto, *">
+                <VerticalStackLayout VerticalOptions="Center">
+                    <Button
+                        Command="{Binding GetCompatibleCpusCommand}"
+                        HeightRequest="50"
+                        Text="Cpu"
+                        WidthRequest="100" />
+                    <Button
+                        BackgroundColor="{StaticResource Gray200}"
+                        Command="{Binding RemoveCpuFromBuildCommand}"
+                        HeightRequest="50"
+                        Text="Entfernen"
+                        TextColor="{StaticResource Black}"
+                        WidthRequest="100" />
+                </VerticalStackLayout>
+                <cells:ComponentBaseCard
+                    Grid.Column="1"
+                    BindingContext="{Binding PcBuild.Cpu}"
+                    WidthRequest="500" />
+            </Grid>
+
+            <Grid ColumnDefinitions="auto, *">
+                <VerticalStackLayout VerticalOptions="Center">
+                    <Button
+                        Command="{Binding GetCompatibleCpuCoolerssCommand}"
+                        HeightRequest="50"
+                        Text="Kühler"
+                        WidthRequest="100" />
+                    <Button
+                        BackgroundColor="{StaticResource Gray200}"
+                        Command="{Binding RemoveCpuCoolerFromBuildCommand}"
+                        HeightRequest="50"
+                        Text="Entfernen"
+                        TextColor="{StaticResource Black}"
+                        WidthRequest="100" />
+                </VerticalStackLayout>
+                <cells:ComponentBaseCard
+                    Grid.Column="1"
+                    BindingContext="{Binding PcBuild.CpuCooler}"
+                    WidthRequest="500" />
+            </Grid>
+
+            <Grid ColumnDefinitions="auto, *">
+                <VerticalStackLayout VerticalOptions="Center">
+                    <Button
+                        Command="{Binding GetCompatibleMotherboardsCommand}"
+                        HeightRequest="50"
+                        Text="Mainboard"
+                        WidthRequest="100" />
+                    <Button
+                        BackgroundColor="{StaticResource Gray200}"
+                        Command="{Binding RemoveMotherboardFromBuildCommand}"
+                        HeightRequest="50"
+                        Text="Entfernen"
+                        TextColor="{StaticResource Black}"
+                        WidthRequest="100" />
+                </VerticalStackLayout>
+                <cells:ComponentBaseCard
+                    Grid.Column="1"
+                    BindingContext="{Binding PcBuild.Motherboard}"
+                    WidthRequest="500" />
+            </Grid>
+
+            <Grid ColumnDefinitions="auto, *">
+                <VerticalStackLayout VerticalOptions="Center">
+                    <Button
+                        Command="{Binding GetCompatibleRamsCommand}"
+                        HeightRequest="50"
+                        Text="Ram"
+                        WidthRequest="100" />
+                    <Button
+                        BackgroundColor="{StaticResource Gray200}"
+                        Command="{Binding RemoveRamFromBuildCommand}"
+                        HeightRequest="50"
+                        Text="Entfernen"
+                        TextColor="{StaticResource Black}"
+                        WidthRequest="100" />
+                </VerticalStackLayout>
+                <cells:ComponentBaseCard
+                    Grid.Column="1"
+                    BindingContext="{Binding PcBuild.Ram}"
+                    WidthRequest="500" />
+            </Grid>
+
+            <Grid ColumnDefinitions="auto, *">
+                <VerticalStackLayout VerticalOptions="Center">
+                    <Button
+                        Command="{Binding GetCompatibleGpusCommand}"
+                        HeightRequest="50"
+                        Text="Gpu"
+                        WidthRequest="100" />
+                    <Button
+                        BackgroundColor="{StaticResource Gray200}"
+                        Command="{Binding RemoveGpuFromBuildCommand}"
+                        HeightRequest="50"
+                        Text="Entfernen"
+                        TextColor="{StaticResource Black}"
+                        WidthRequest="100" />
+                </VerticalStackLayout>
+                <cells:ComponentBaseCard
+                    Grid.Column="1"
+                    BindingContext="{Binding PcBuild.Gpu}"
+                    WidthRequest="500" />
+            </Grid>
+
+            <Grid ColumnDefinitions="auto, *">
+                <VerticalStackLayout VerticalOptions="Center">
+                    <Button
+                        Command="{Binding GetCompatibleCasesCommand}"
+                        HeightRequest="50"
+                        Text="Gehäuse"
+                        WidthRequest="100" />
+                    <Button
+                        BackgroundColor="{StaticResource Gray200}"
+                        Command="{Binding RemoveCaseFromBuildCommand}"
+                        HeightRequest="50"
+                        Text="Entfernen"
+                        TextColor="{StaticResource Black}"
+                        WidthRequest="100" />
+                </VerticalStackLayout>
+                <cells:ComponentBaseCard
+                    Grid.Column="1"
+                    BindingContext="{Binding PcBuild.Case}"
+                    WidthRequest="500" />
+            </Grid>
+
+            <Grid ColumnDefinitions="auto, *">
+                <VerticalStackLayout VerticalOptions="Center">
+                    <Button
+                        Command="{Binding GetCompatiblePsusCommand}"
+                        HeightRequest="50"
+                        Text="Netzteil"
+                        WidthRequest="100" />
+                    <Button
+                        BackgroundColor="{StaticResource Gray200}"
+                        Command="{Binding RemovePsuFromBuildCommand}"
+                        HeightRequest="50"
+                        Text="Entfernen"
+                        TextColor="{StaticResource Black}"
+                        WidthRequest="100" />
+                </VerticalStackLayout>
+                <cells:ComponentBaseCard
+                    Grid.Column="1"
+                    BindingContext="{Binding PcBuild.Psu}"
+                    WidthRequest="500" />
+            </Grid>
+
+            <Grid ColumnDefinitions="auto, *">
+                <VerticalStackLayout VerticalOptions="Center">
+                    <Button
+                        Command="{Binding GetCompatibleStoragesCommand}"
+                        HeightRequest="50"
+                        Text="Speicher"
+                        WidthRequest="100" />
+                    <Button
+                        BackgroundColor="{StaticResource Gray200}"
+                        Command="{Binding RemoveStorageFromBuildCommand}"
+                        HeightRequest="50"
+                        Text="Entfernen"
+                        TextColor="{StaticResource Black}"
+                        WidthRequest="100" />
+                </VerticalStackLayout>
+                <cells:ComponentBaseCard
+                    Grid.Column="1"
+                    BindingContext="{Binding PcBuild.Storage}"
+                    WidthRequest="500" />
+            </Grid>
+
+        </VerticalStackLayout>
+
+        <VerticalStackLayout
+            Grid.Column="1"
+            Spacing="5"
+            VerticalOptions="End">
+            <HorizontalStackLayout HorizontalOptions="Center">
+                <Label FontSize="Large" Text="Medium Markt Preis:" />
+                <Label
+                    Margin="10,0,0,0"
+                    FontSize="Large"
+                    Text="{Binding PcBuild.TotalPrice, StringFormat='{0:C}'}"
+                    TextColor="{StaticResource Primary}" />
+            </HorizontalStackLayout>
+            <HorizontalStackLayout HorizontalOptions="Center">
+                <Label FontSize="Large" Text="Maximaler Verbrauch: " />
+                <Label
+                    Margin="10,0,10,0"
+                    FontSize="Large"
+                    Text="{Binding PcBuild.TotalPowerConsumption}"
+                    TextColor="{StaticResource Primary}" />
+                <Label FontSize="Large" Text="Watt" />
+            </HorizontalStackLayout>
+            <Button
+                Margin="50,25,50,25"
+                Command="{Binding SaveAsPdfCommand}"
+                FontSize="Medium"
+                IsEnabled="{Binding BuildComplete}"
+                Text="Konfiguration als PDF speichern" />
+        </VerticalStackLayout>
+
+        <CollectionView
+            Grid.Column="2"
+            ItemTemplate="{StaticResource ComponentDataTemplateSelector}"
+            ItemsSource="{Binding Components}"
+            SelectedItem="{Binding SelectedComponent}"
+            SelectionChangedCommand="{Binding AddComponentToPcBuildCommand}"
+            SelectionMode="Single" />
+    </Grid>
+
+</ContentPage>

@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ResourceDictionary
+    x:Class="PcKonfigurator.Client.Resources.MyResourceDictionary"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:cells="clr-namespace:PcKonfigurator.Client.Cells">
+
+    <DataTemplate x:Key="ComponentBaseTemplate">
+        <cells:ComponentBaseCard />
+    </DataTemplate>
+
+    <DataTemplate x:Key="CpuTemplate">
+        <cells:CpuCard />
+    </DataTemplate>
+
+    <DataTemplate x:Key="CpuCoolerTemplate">
+        <cells:CpuCoolerCard />
+    </DataTemplate>
+
+    <DataTemplate x:Key="GpuTemplate">
+        <cells:GpuCard />
+    </DataTemplate>
+
+    <DataTemplate x:Key="CaseTemplate">
+        <cells:CaseCard />
+    </DataTemplate>
+
+    <DataTemplate x:Key="MotherboardTemplate">
+        <cells:MotherboardCard />
+    </DataTemplate>
+
+    <DataTemplate x:Key="PsuTemplate">
+        <cells:PsuCard />
+    </DataTemplate>
+
+    <DataTemplate x:Key="RamTemplate">
+        <cells:RamCard />
+    </DataTemplate>
+
+    <DataTemplate x:Key="StorageTemplate">
+        <cells:StorageCard />
+    </DataTemplate>
+
+    <cells:ComponentDataTemplateSelector
+        x:Key="ComponentDataTemplateSelector"
+        CaseTemplate="{StaticResource CaseTemplate}"
+        ComponentBaseTemplate="{StaticResource ComponentBaseTemplate}"
+        CpuCoolerTemplate="{StaticResource CpuCoolerTemplate}"
+        CpuTemplate="{StaticResource CpuTemplate}"
+        GpuTemplate="{StaticResource GpuTemplate}"
+        MotherboardTemplate="{StaticResource MotherboardTemplate}"
+        PsuTemplate="{StaticResource PsuTemplate}"
+        RamTemplate="{StaticResource RamTemplate}"
+        StorageTemplate="{StaticResource StorageTemplate}" />
+
+</ResourceDictionary>
